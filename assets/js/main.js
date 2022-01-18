@@ -245,6 +245,23 @@ document.getElementById('submit').addEventListener('click', () => {
               document.getElementById('form-success').style.margin = '12px'
               document.getElementById('form-success').style.border = '3px solid blue'
               document.getElementById('form-success').style.borderRadius = '15px'
+          })
+          .catch(err => {
+            console.log(err)
+            document.getElementById('name').value = ''
+            document.getElementById('email').value = ''
+            document.getElementById('number').value = ''
+            document.getElementById('course').value = ''
+            document.getElementById('type').value = ''
+            document.getElementById('form-success').innerHTML = `<h6>SORRY! Your response couldn't be captured.</h6>`
+            document.getElementById('form-success').style.backgroundColor = 'red'
+            document.getElementById('form-success').style.color = 'white'
+            document.getElementById('form-success').style.padding = '15px'
+            document.getElementById('form-success').style.padding = '5px'
+            document.getElementById('form-success').style.textAlign = 'center'
+            document.getElementById('form-success').style.margin = '12px'
+            document.getElementById('form-success').style.border = '3px solid blue'
+            document.getElementById('form-success').style.borderRadius = '15px'
           });
       // Reset the form
       // document.getElementsByTagName('form').reset()
