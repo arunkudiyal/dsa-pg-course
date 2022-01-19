@@ -231,7 +231,7 @@ document.getElementById('submit').addEventListener('click', () => {
       postData('https://api.technologyforall.in/register', requestData)
           .then(data => {
               console.log(data);
-              window.location.href = 'thankyou.html'
+              window.location.href = '/inno-pg-fed-ds/thankyou.html'
           })
           .catch(err => {
             console.log(err)
