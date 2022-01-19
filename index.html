@@ -640,6 +640,67 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
 
+  <!-- BED Integration -->
+  <script>
+    document.getElementById('submit').addEventListener('click', () => {
+    const name = document.getElementById('name').value
+    const email = document.getElementById('email').value
+    const number = document.getElementById('number').value
+    const course = document.getElementById('course').value
+    const type = document.getElementById('type').value
+    const url = document.URL
+
+    if(name !== '' && email !== '' && number !== '' && course !== '' && type !== '' ) {
+      if(number.length === 10) {
+        console.log('WORKS...')
+        const requestData = {name, number, email, course, type, url}
+      
+        async function postData(url = '', data = {}) {
+            const response = await fetch(url, {
+            method: 'POST', 
+            mode: 'cors', 
+            cache: 'no-cache', 
+            credentials: 'same-origin', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+            });
+            return response.json();
+        }
+        
+        postData('https://api.technologyforall.in/register', requestData)
+            .then(data => {
+                console.log(data);
+                window.location.href = 'thankyou.html'
+            })
+            .catch(err => {
+              console.log(err)
+              document.getElementById('name').value = ''
+              document.getElementById('email').value = ''
+              document.getElementById('number').value = ''
+              document.getElementById('course').value = ''
+              document.getElementById('type').value = ''
+              document.getElementById('form-success').innerHTML = `<h6>SORRY! Your response couldn't be captured.</h6>`
+              document.getElementById('form-success').style.backgroundColor = 'red'
+              document.getElementById('form-success').style.color = 'white'
+              document.getElementById('form-success').style.padding = '15px'
+              document.getElementById('form-success').style.padding = '5px'
+              document.getElementById('form-success').style.textAlign = 'center'
+              document.getElementById('form-success').style.margin = '12px'
+              document.getElementById('form-success').style.border = '3px solid blue'
+              document.getElementById('form-success').style.borderRadius = '15px'
+            });
+        // Reset the form
+        // document.getElementsByTagName('form').reset()
+
+      } else {
+        document.getElementById('number').style.border = `2px solid red`
+      }
+    }
+  })
+  </script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
