@@ -228,7 +228,7 @@ document.getElementById('submit').addEventListener('click', () => {
           return response.json();
       }
       
-      postData('http://innopgbed-env.eba-83gru6sx.us-east-1.elasticbeanstalk.com/register', requestData)
+      postData('https://api.technologyforall.in/register', requestData)
           .then(data => {
               console.log(data);
               document.getElementById('name').value = ''
