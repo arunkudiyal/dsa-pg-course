@@ -231,20 +231,7 @@ document.getElementById('submit').addEventListener('click', () => {
       postData('https://api.technologyforall.in/register', requestData)
           .then(data => {
               console.log(data);
-              document.getElementById('name').value = ''
-              document.getElementById('email').value = ''
-              document.getElementById('number').value = ''
-              document.getElementById('course').value = ''
-              document.getElementById('type').value = ''
-              document.getElementById('form-success').innerHTML = `<h6>THANKYOU! Your response has been captured successfully.</h6>`
-              document.getElementById('form-success').style.backgroundColor = 'green'
-              document.getElementById('form-success').style.color = 'white'
-              document.getElementById('form-success').style.padding = '15px'
-              document.getElementById('form-success').style.padding = '5px'
-              document.getElementById('form-success').style.textAlign = 'center'
-              document.getElementById('form-success').style.margin = '12px'
-              document.getElementById('form-success').style.border = '3px solid blue'
-              document.getElementById('form-success').style.borderRadius = '15px'
+              window.location.href = 'thankyou.html'
           })
           .catch(err => {
             console.log(err)
