@@ -1153,6 +1153,19 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Download Curriculum
+--------------------------------------------------------------*/
+#download-curriculum {
+  background-color: #01036f;
+  display: flex;
+  justify-content: center;
+}
+
+#download-curriculum button {
+  border-radius: 35px;
+}
+
+/*--------------------------------------------------------------
 # F.A.Q
 --------------------------------------------------------------*/
 .faq .faq-list {
